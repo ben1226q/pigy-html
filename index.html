@@ -5,6 +5,38 @@
     <title>test</title>
 </head>
 <body>
+<button id="edit-btn">加粗</button>
+<button id="edit-btn2">加入内容</button>
+<button id="edit-btn3">打印内容</button>
+<button id="edit-btn4">打印内容</button>
+    <div id="content" style="width: 400px;height: 400px;background-color: bisque" contenteditable="true">
 
+    </div>
+
+    <script>
+        var btn = document.getElementById('edit-btn');
+        btn.onclick = function() {
+            var aa = document.execCommand("bold", false, null);
+            console.log(aa);//若log输出true说明点击按钮后按钮生效；
+        }
+
+        var btn2 = document.getElementById('edit-btn2');
+        btn2.onclick = function() {
+            var content = document.getElementById('content');
+            content.innerHTML = "<p style='color: red'>hello,world</p>"
+        }
+
+        var btn3 = document.getElementById('edit-btn3');
+        btn3.onclick = function() {
+            var content = document.getElementById('content');
+            console.log(content.innerHTML);//若log输出true说明点击按钮后按钮生效；
+        }
+
+        var btn4 = document.getElementById('edit-btn4');
+        btn4.onclick = function() {
+            var content = document.getElementById('content');
+            content.contenteditable =false;
+        }
+    </script>
 </body>
 </html>
